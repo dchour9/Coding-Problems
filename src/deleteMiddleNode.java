@@ -1,4 +1,4 @@
-
+//Delete middle node of a linked list
 public class deleteMiddleNode {
 	
 	public static boolean deleteMiddle(LinkedListNode n){

@@ -1,4 +1,5 @@
 import java.util.Stack;
+/*Tower class used for towers of hanoi*/
 public class Tower {
 	private Stack<Integer>disks;
 	private int index; //number ID of tower

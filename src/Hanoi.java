@@ -1,7 +1,7 @@
 
 public class Hanoi {
 	public static void main(String [] args){
-		// Set up code.
+		// Set up code by creating towers for towers of hanoi
 				int n = 5;
 				Tower[] towers = new Tower[3];
 				for (int i = 0; i < 3; i++) {

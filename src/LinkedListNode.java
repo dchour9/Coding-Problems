@@ -2,8 +2,7 @@
 public class LinkedListNode {
 
 	public LinkedListNode next;
-	//public LinkedListNode prev;
-	//String id;
+	//public LinkedListNode prev; necessary for doubly linked list
 	public int data;
 	
 	public LinkedListNode(LinkedListNode n){
@@ -14,7 +13,6 @@ public class LinkedListNode {
 	public LinkedListNode(int d, LinkedListNode n){
 		data = d;
 		next = n;
-		//id = i;
 		//prev = p;
 	}
 }

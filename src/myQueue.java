@@ -5,6 +5,7 @@ public class myQueue {
 	public myQueue(){
 		newest = new Stack<Integer>();
 		oldest = new Stack<Integer>();
+		//push the values of one stack using pop to get reverse order
 	}
 	
 	public void add(int d){

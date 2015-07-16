@@ -1,11 +1,10 @@
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
+/*Add two numbers given by a sequence of linked list nodes eg 3-4-2 + 1-2-3 */
 
 public class addNodes {
 	public static List<LinkedListNode> add(LinkedListNode[] a, LinkedListNode[] b){
-		//LinkedListNode[] result = new LinkedListNode[a.length + b.length];
 		String var1 = "";
 		String var2 = "";
 		for(LinkedListNode a2: a){
@@ -30,13 +29,6 @@ public class addNodes {
 		for(int i = 1; i < nodes.size(); i++){
 			nodes.get(i-1).next = nodes.get(i);
 		}
-		/*LinkedListNode[] sum = new LinkedListNode[nodes.size()];
-		for (int i = 0; i < sum.length; i++){
-			sum[i] = nodes.get(i);
-			if(i > 0){
-				sum[i-1].next = sum[i];
-			}
-		}*/
 		return nodes;
 	}
 	
