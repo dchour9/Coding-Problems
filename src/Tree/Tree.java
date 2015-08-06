@@ -8,6 +8,11 @@ public class Tree {
 		size = 0;
 	}
 	
+	public Tree(TNode n, int d){
+		root = n;
+		size = d;
+	}
+	
 	//create root node or recursively call Tnode's insert
 	public void insert(int d){
 		if(size == 0){
@@ -19,6 +24,22 @@ public class Tree {
 		}
 	}
 	
+	public void insert(TNode t){
+		if(size == 0){
+			root = new TNode(t.data);
+			size++;
+		}else{
+			TNode temp = root;
+			while(temp != null){
+				if(t.data < temp.data){
+					temp = temp.left;
+				}else{
+					temp = temp.right;
+				}
+			}
+			temp = new TNode(t.data);
+		}
+	}
 	//recursively find height from the root
 	public int height(TNode t){
 		if(t == null){

@@ -47,6 +47,7 @@ public class TNode {
 		}
 	}
 	
+	
 	public static void main(String [] args){
 		TNode t = new TNode(5);
 		t.insert(4);
