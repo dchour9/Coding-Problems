@@ -38,6 +38,7 @@ public class Tree {
 				}
 			}
 			temp = new TNode(t.data);
+			size++;
 		}
 	}
 	//recursively find height from the root
@@ -65,9 +66,10 @@ public class Tree {
 		T.insert(4);
 		T.insert(3);
 		T.insert(8);
-		T.insert(10);
+		T.insert(new TNode(10));
 		T.insert(11);
 		T.insert(13);
+		System.out.println(T.size);
 
 	}
 }
