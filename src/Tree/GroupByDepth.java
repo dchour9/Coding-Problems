@@ -51,15 +51,18 @@ public class GroupByDepth {
 					createNextNode(row, temp.right);
 				}
 				//don't increment row number because you have either just cleared the row or there was nothing
-				continue;
+				
 			}
 			TNode next = pq.peek();
-			//don't increment the row if you have a node of the same level still on the priority queue
-			//move on to the next node on the same level
-			if(t.height(next) == t.height(temp)){
+			if(next == null)
+				break;
+			//dont increment if the distance to the root for the next node is the same as for this node, same group
+			if(next.distanceFromNode(t.root) == temp.distanceFromNode(t.root)){
 				continue;
 			}
-			row++;
+			if(row != groups.length - 1){
+				row++;
+			}
 		}
 		
 		return groups;
@@ -67,7 +70,7 @@ public class GroupByDepth {
 	}
 	
 	public static void main(String [] args){
-		int [] numbers = {1, 2 , 3, 4, 5, 6, 7, 8, 9, 10, 11 , 12 ,13, 14, 15};
+		int [] numbers = {1, 2 , 3, 4, 5, 6, 7, 8, 9, 10 , 11 ,12 ,13 ,14 ,15};
 		Tree t = MinimalTree.createMinimalBST(numbers);
 		LinkedListNode[] arr = new LinkedListNode[t.height(t.root)];
 		arr = group(t);
