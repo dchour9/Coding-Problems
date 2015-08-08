@@ -79,10 +79,30 @@ public class TNode {
 		}
 	}
 	
+	public TNode findSuccessor(){
+		TNode temp = this;
+		if(temp.right == null){
+			return null;
+		}
+		else{
+			temp = temp.right;
+			while(temp.left != null){
+				temp = temp.left;
+			}
+		}
+		return temp;
+	}
+	
 	
 	public static void main(String [] args){
 		TNode t = new TNode(5);
-		t.insert(4);
+		t.insert(8);
+		t.insert(9);
+		t.insert(7);
+		t.insert(6);
+		TNode next = t.findSuccessor();
+		System.out.println(next.data);
+		/*t.insert(4);
 		t.insert(6);
 		t.insert(5);
 		TNode test = new TNode(8);
@@ -94,7 +114,7 @@ public class TNode {
 		System.out.println(t.left.data);
 		System.out.println(t.right.data);
 		System.out.println(t.left.parent.data);
-		System.out.println(t.left.right.data);
+		System.out.println(t.left.right.data);*/
 	}
 
 }
