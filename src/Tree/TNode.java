@@ -8,6 +8,16 @@ public class TNode {
 	
 	public TNode(int n){
 		data = n;
+		right = null;
+		left = null;
+		parent = null;
+	}
+	
+	public TNode(TNode t){
+		data = t.data;
+		right = t.right;
+		left = t.left;
+		parent = t.parent;
 	}
 	
 	public int distanceFromNode(TNode t){
