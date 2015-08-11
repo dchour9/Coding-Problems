@@ -36,7 +36,7 @@ public class Tree {
 	}
 	
 	//recursively find height from the root
-	public int height(TNode t){
+	public static int height(TNode t){
 		if(t == null){
 			return 0;
 		}else{
@@ -133,6 +133,46 @@ public class Tree {
 		return(matchTrees(root, newRoot));
 	}
 	
+	public static void findPath(TNode node, int value, int[] path, int level){
+		if(node == null){
+			return;
+		}
+		
+		//insert current node into path
+		path[level] = node.data;
+		
+		int sum = 0;
+		for(int i = level; i >= 0; i--){
+			sum += path[i];
+			//System.out.println("sum after adding " + path[i] + " is " + sum);
+			//System.out.println("Value to find is " + value);
+			if(sum == value){
+				//System.out.println("sum is " + sum + " is equal to " + value);
+				printPath(path, i, level);
+			}
+		}
+		
+		findPath(node.left, value, path, level + 1);
+		findPath(node.right, value, path, level + 1);
+	}
+	
+	
+	public static void printPath(int [] path, int start, int end){
+		for(int i = start; i <= end; i++){
+			System.out.println(path[i] + " ");
+		}
+		System.out.println();
+	}
+	public static void findPathsToSum(TNode node, int value){
+		int height = height(node);
+		//System.out.println("height was " + height);
+		//System.out.println("value to find is " + value);
+		int [] path = new int[height];
+		findPath(node, value, path, 0);
+	}
+	
+	
+	
 	public static void main(String [] args){
 		Tree T = new Tree();
 		T.insert(7);
@@ -140,23 +180,24 @@ public class Tree {
 		T.insert(6);
 		T.insert(9);
 		T.insert(4);
-		TNode a = new TNode(8);
+		//TNode a = new TNode(8);
 		T.insert(3);
-		T.insert(a);
-		TNode b = new TNode(10);
-		T.insert(new TNode(b));
+		//T.insert(a);
+		//TNode b = new TNode(10);
+		//T.insert(new TNode(b));
 		T.insert(11);
 		T.insert(13);
 		//System.out.println("The common ancestor of 8 and 10 is " + T.findAncestor(a, b).data);
 		
 		//Test for subtree
-		Tree test = new Tree();
+		/*Tree test = new Tree();
 		test.insert(9);
 		test.insert(8);
 		test.insert(10);
 		test.insert(11);
 		test.insert(13);
-		System.out.println(test.isSubtreeOf(T));
+		System.out.println(test.isSubtreeOf(T));*/
+		findPathsToSum(T.root, 40);
 
 	}
 }
