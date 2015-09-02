@@ -14,6 +14,7 @@ public class Tree {
 		size = d;
 	}
 	
+	
 	//create root node or recursively call Tnode's insert
 	public void insert(int d){
 		if(size == 0){
@@ -197,7 +198,7 @@ public class Tree {
 		test.insert(11);
 		test.insert(13);
 		System.out.println(test.isSubtreeOf(T));*/
-		findPathsToSum(T.root, 40);
+		findPathsToSum(T.root, 4	0);
 
 	}
 }
