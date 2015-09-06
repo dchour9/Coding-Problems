@@ -13,6 +13,7 @@ public class insertionSort {
 			}
 			arr[previous+1] = num;
 			
+			
 		}
 	}
 	
@@ -23,5 +24,5 @@ public class insertionSort {
 		for(int i : arr){
 			System.out.print(i + " ");
 		}
-	}
+	}	
 }
